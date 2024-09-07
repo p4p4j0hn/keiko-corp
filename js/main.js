@@ -68,14 +68,14 @@ $(document).ready(function(){
 	});
 
 	if($('#submit_form').length){
-		//Mailchim Subscription form
+		//Mailchimp Subscription form
 		$('#submit_form').ajaxChimp({
-		    callback: chimpResponce
+		    callback: chimpResponse
 		});
 	}	
 
 	//Mail chimp callback function
-	function chimpResponce(resp) {
+	function chimpResponse(resp) {
    		if (resp.result === 'success') {   			
    			processing('loading', 'icon');
 			$('#mc_submit').removeAttr('disabled', 'disabled');
@@ -93,13 +93,6 @@ $(document).ready(function(){
 	function processing(hide, show){
 			$('#mc_submit i').removeClass(hide).addClass(show);
 	}
-
-
-
-
-
-
-
 
 	//Popup video
 	$('#play_video').click(function(e){
@@ -119,8 +112,5 @@ $(document).ready(function(){
 		});
 
 	});
-
-
-
 
 });
